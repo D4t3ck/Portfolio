@@ -8,11 +8,9 @@
   border-top: 4px solid var(--green);
 
   .info_container {
+    @include flexbox($jc: space-between, $gap: 10px);
     position: relative;
-    display: flex;
-    justify-content: space-between;
     padding: 120px 100px 120px 100px;
-    gap: 10px;
 
     p {
       font-size: 23px;
@@ -21,8 +19,7 @@
   }
 
   .footer_links {
-    display: flex;
-    gap: 42px;
+    @include flexbox($gap: 42px);
 
     a {
       text-decoration: none;
