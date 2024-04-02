@@ -1,0 +1,110 @@
+@import "../../../styles.scss";
+
+section {
+  position: relative;
+  @include flexbox($fd: column);
+  padding: 10%;
+
+  .profile_container {
+    @include flexbox($jc: space-between);
+    width: 100%;
+    margin-top: 10px;
+
+    .profile {
+      position: relative;
+
+      img:nth-child(1) {
+        width: 36.861vw;
+        position: absolute;
+        left: -3.778vw;
+        top: 3vw;
+        z-index: -1;
+      }
+      img:nth-child(2) {
+        width: 38.764vw;
+        position: absolute;
+        right: -4.444vw;
+        top: 0.597vw;
+        z-index: -2;
+      }
+      img:nth-child(3) {
+        width: 40vw;
+        height: auto;
+      }
+    }
+  }
+
+  .headline_container {
+    position: relative;
+    @include flexbox($jc: space-between, $fd: column);
+    margin-bottom: 100px;
+    padding-left: 2px;
+    height: 20vw;
+    padding-bottom: 20px;
+    padding-top: 5px;
+
+    .vertical_txt {
+      position: absolute;
+      top: 0;
+      transform: rotate(-90deg);
+      font-size: 4.444vw;
+      color: var(--white);
+      margin-top: 10%;
+      left: -24%;
+    }
+
+    .headline {
+      div:nth-child(1) {
+        font-size: 4.833vw;
+        font-weight: 900;
+        color: var(--main_font_color);
+        font-family: "Poppins";
+        letter-spacing: 6.2px;
+      }
+      div:nth-child(2) {
+        color: var(--purple);
+        position: absolute;
+        display: flex;
+        font-size: 3.05cqw;
+        font-weight: 600;
+        top: 8vw;
+        letter-spacing: 1px;
+      }
+    }
+
+    button {
+      width: 165px;
+      height: 58px;
+      border-radius: 10px;
+      margin-top: 50px;
+      gap: 10px;
+      background-color: var(--light_blue);
+      z-index: 1;
+      cursor: pointer;
+      transition: 0.2s ease-in;
+      border: none;
+      a {
+        font-size: 23px;
+        font-family: "Poppins", sans-serif;
+        color: var(--white);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--purple);
+          width: 185px;
+          height: 68px;
+          transition: 0.2s ease-in;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
+
+.vector {
+  position: absolute;
+  width: 100vw;
+  top: 32vw;
+}
