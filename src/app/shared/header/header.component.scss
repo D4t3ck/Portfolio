@@ -1,20 +1,20 @@
 @import "../../../styles";
 
 .header_container {
+  @include flexbox;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 6rem;
   padding: 1rem 10%;
   z-index: 999;
   background-color: var(--dark_blue_bg);
 
   .logo {
-    width: 8rem;
-    height: 8rem;
+    width: 11rem;
+    height: 9rem;
+    margin-right: auto;
   }
 }
 
