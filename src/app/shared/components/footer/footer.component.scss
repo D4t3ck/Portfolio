@@ -1,0 +1,100 @@
+@import "../../../../styles.scss";
+@import "../../../shared/variables/variables.scss";
+
+.footer {
+  text-wrap: balance;
+  box-shadow: 0px -5px 5px -3px rgba(112, 230, 28, 1);
+
+  .footer_container {
+    @include flexbox($jc: space-between, $g: 1.5rem);
+    padding: 4rem 10rem 2rem 10rem;
+
+    .logo_container {
+      @include flexbox($fd: column);
+      position: relative;
+
+      .logo {
+        @include flexbox;
+
+        > img {
+          width: auto;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .legal_notices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+
+      .imprint,
+      .privacy_policy {
+        font-size: 1.1rem;
+        color: var(--fontColor);
+        text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+          color: var(--green);
+        }
+      }
+    }
+
+    .name_container {
+      margin: 1rem;
+      > p {
+        font-size: 1.4rem;
+        font-weight: 300;
+      }
+    }
+
+    .footer_links {
+      @include flexbox($g: 3rem);
+
+      > a {
+        text-decoration: none;
+        text-decoration-color: var(--turquoise);
+        color: var(--fontColor);
+      }
+
+      img {
+        width: 2.5rem;
+        border-radius: 50%;
+        background: transparent;
+        border: 2px solid var(--turquoise);
+        box-shadow: 0px 0px 8px 2px var(--turquoise);
+        border-radius: 5px;
+        filter: invert(45%) sepia(73%) saturate(471%) hue-rotate(143deg)
+          brightness(104%) contrast(92%);
+
+        &:hover {
+          box-shadow: 0px 0px 5px 3px var(--fontColor);
+          scale: 1.1;
+          transition: 0.2s ease-in;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1129px) {
+    .footer_container {
+      @include flexbox($fd: column, $g: 2rem);
+      padding: unset;
+
+      .name_container {
+        > p {
+          font-size: 1.1em;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1129px) {
+  .footer {
+    margin-bottom: 2rem;
+  }
+}
