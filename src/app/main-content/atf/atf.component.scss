@@ -1,2 +1,33 @@
+.atf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    border: 2px green dotted;
+}
 
+/* .bck_img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 2px goldenrod dotted;
+    width: 100%;
+    height: 100vh;
+}
 
+.bck_img img {
+    position: absolute;
+    width: 10rem;
+    height: 35rem;
+    
+}
+
+.bck_img img:nth-child(1) {
+    left: 0;
+}
+
+.bck_img img:nth-child(2) {
+    right: 0;
+} */
