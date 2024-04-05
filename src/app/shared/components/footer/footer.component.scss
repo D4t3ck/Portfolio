@@ -47,7 +47,7 @@
       margin: 1rem;
       > p {
         font-size: 1.4rem;
-        font-weight: 300;
+        font-weight: 400;
       }
     }
 
@@ -55,26 +55,26 @@
       @include flexbox($g: 3rem);
 
       > a {
+        display: flex;
+        padding: 3px;
+        border-radius: 5px;
+        border: 2px solid var(--fontColor);
         text-decoration: none;
         text-decoration-color: var(--turquoise);
         color: var(--fontColor);
+
+        &:hover {
+          background-color: var(--backgroundLight);
+          border: 2px solid var(--turquoise);
+          box-shadow: 0px 0px 5px 2px var(--backgroundLight);
+          scale: 1.1;
+          transition: 0.1s ease-in;
+        }
       }
 
       img {
         width: 2.5rem;
-        border-radius: 50%;
         background: transparent;
-        border: 3px solid var(--fontColor);
-        box-shadow: 0px 0px 8px 1px var(--fontColor);
-        border-radius: 5px;
-        // filter: invert(45%) sepia(73%) saturate(471%) hue-rotate(143deg)
-        //   brightness(104%) contrast(92%);
-
-        &:hover {
-          box-shadow: 0px 0px 5px 3px var(--fontColor);
-          scale: 1.2;
-          transition: 0.2s ease-in;
-        }
       }
     }
   }
