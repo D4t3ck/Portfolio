@@ -14,39 +14,46 @@ header {
   left: 0;
   height: 5rem;
   padding: 0 4rem;
-  background-color: var(--background);
   z-index: 10;
+  /* From https://css.glass */
+  background: rgba(19, 37, 72, 0.26);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
+ /*  border: 2px solid var(--background); */
 
   .logo {
-    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
     cursor: auto;
 
     > img {
-      height: 40px;
+      height: 120px;
       cursor: pointer;
     }
   }
-  
+
   .burger {
     position: relative;
+    display: none;
     width: 40px;
     height: 25px;
     background: transparent;
     cursor: pointer;
-    display: none;
   }
   .burger input {
     display: none;
   }
   .burger span {
-    display: block;
     position: absolute;
-    height: 2px;
+    left: 0;
+    display: block;
     width: 100%;
-    background: white;
+    height: 2px;
+    background: var(--fontColor);
     border-radius: 9px;
     opacity: 1;
-    left: 0;
     transform: rotate(0deg);
     transition: 0.25s ease-in-out;
   }
@@ -78,21 +85,20 @@ header {
     top: 28px;
     left: 5px;
   }
-  
+
   .links {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+    @include flexbox;
+    font-size: 1.2rem;
 
     a {
       color: var(--fontColor);
       text-decoration: none;
-      
+      white-space: nowrap;
+
       &:hover {
         color: var(--green);
         cursor: pointer;
       }
-      
     }
   }
 }

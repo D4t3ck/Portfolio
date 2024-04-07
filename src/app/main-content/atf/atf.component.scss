@@ -1,22 +1,20 @@
 @import "../../shared/variables/variables.scss";
 
 .atf {
-  border: 2px green dotted;
   @include flexbox($fd: column);
   height: 100vh;
   width: 100vw;
   max-width: 100%;
   padding-top: 10rem;
-  gap: 10rem;
+  gap: 5rem;
 }
 
 main {
   @include flexbox($fd: column);
+  height: 80%;
 
   .h1 {
     font-size: clamp(2.4rem, 10vw, 8rem);
-    /* font-size: 8rem; */
-    /* width: 100%; */
     font-weight: 800;
     letter-spacing: 0.5rem;
     text-align: center;
@@ -131,9 +129,9 @@ main {
 } */
 
 .social_links_container {
-  //   border: 2px dotted tomato;
   display: flex;
   justify-content: space-between;
+  height: 30%;
   width: 100%;
 
   .social_links {
@@ -226,7 +224,6 @@ main {
   }
 
   .social_links {
-    flex-direction: column;
 
     > img {
       display: none;
