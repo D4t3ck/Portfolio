@@ -1,16 +1,16 @@
-<header class="header_container">
+<header>
   <a class="logo" href="#top">
-    <img class="logo" src="../../../assets/img/logo.png" alt="Logo" />
+    <img src="./../../../../assets/img/logo.png" />
   </a>
-
-  <nav class="nav_menu">
-    <a href="#aboutMe">About me</a>
-    <a href="#techStack">Skills</a>
-    <a href="#myWork">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div id="burgerMenu">
-    <img src="../../../assets/img/header/bg_menu.png" alt="Burger Menu" />
+  <label class="burger" for="burger">
+    <input type="checkbox" id="burger" (click)="toggleMenu()" />
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <div class="links" [class.isOpen]="isMenuOpen">
+    <a href="#aboutMe" (click)="closeMenu()">About me</a>
+    <a href="#skills" (click)="closeMenu()">Skills</a>
+    <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
   </div>
 </header>

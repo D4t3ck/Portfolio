@@ -1,38 +1,55 @@
+@import "../../shared/variables/variables.scss";
+
 .atf {
-  //   border: 2px green dotted;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
+  border: 2px green dotted;
+  @include flexbox($fd: column);
   height: 100vh;
-}
-
-.shadow_left {
-  position: absolute;
+  width: 100vw;
   max-width: 100%;
-  width: 20%;
-  height: 80%;
-  left: 0;
-  margin-left: -5%;
-  z-index: -2;
-  opacity: 0.9;
-  transform: rotate(-180deg);
-}
-
-.shadow_right {
-  position: absolute;
-  max-width: 100%;
-  width: 20%;
-  height: 80%;
-  right: 0;
-  margin-right: 5%;
-  z-index: -1;
-  opacity: 0.5;
-  transform: rotate(-180deg);
+  padding-top: 10rem;
+  gap: 10rem;
 }
 
 main {
+  @include flexbox($fd: column);
+
+  .h1 {
+    font-size: clamp(2.4rem, 10vw, 8rem);
+    /* font-size: 8rem; */
+    /* width: 100%; */
+    font-weight: 800;
+    letter-spacing: 0.5rem;
+    text-align: center;
+  }
+
+  .h2 {
+    margin-bottom: -5rem;
+  }
+
+  .name {
+    @include flexbox;
+    width: 100%;
+    gap: 1rem;
+
+    .borderline {
+      border: 2.5px solid var(--lightBlue);
+      height: 0;
+      width: 100%;
+      max-width: none;
+      transition: width 0.3s ease;
+    }
+
+    h2 {
+      color: var(--fontColor);
+      font-size: clamp(0.2rem, 5vw, 3rem);
+      width: 100%;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+  }
+}
+
+/* main {
   //  border: 2px dotted gold;
   position: relative;
   display: flex;
@@ -111,7 +128,7 @@ main {
       }
     }
   }
-}
+} */
 
 .social_links_container {
   //   border: 2px dotted tomato;
@@ -181,27 +198,42 @@ main {
       }
     }
   }
-
 }
-@media (max-width: 799px) {
-
+@media (max-width: 1200px) {
   main {
-    margin-bottom: 5rem;
+    .h2 {
+      margin-bottom: -2rem;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    .h2 {
+      margin-bottom: 0;
+    }
   }
 
   .social_links_container {
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
   .social_links {
+    flex-direction: column;
 
-   >img {
-    display: none;
-   }
-  }
+    > img {
+      display: none;
+    }
 
-  .scroll {
-    display: none;
+     a {
+      border: 2px solid var(--turquoise) !important;
+    }
   }
 }
