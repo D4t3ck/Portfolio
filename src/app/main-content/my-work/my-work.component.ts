@@ -8,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './my-work.component.scss'
 })
 export class MyWorkComponent {
+  isOpen: boolean = false;
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  toggleMenu() {
+    this.isOpen = !this.isOpen;
+  }
 }

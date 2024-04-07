@@ -1,4 +1,8 @@
+@import "../../../styles.scss";
+@import "../../../app/shared/variables/variables.scss";
+
 section {
+    @include flexbox;
     width: 100%;
-    height: calc(100vh - 110px);
+    
 }
