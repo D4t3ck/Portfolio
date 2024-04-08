@@ -1,3 +1,45 @@
-<section id="techStack">
-    TechStack
-</section>
+<div class="skill_container" id="skills">
+  <div
+    class="skill_content"
+    data-aos="fade-left"
+    data-aos-anchor-placement="center-bottom"
+    data-aos-duration="1000"
+  >
+    <div class="skills">
+      <h2>Skills</h2>
+      <img src="./../../../assets/img/skills/lightblueRight.png" class="line" />
+    </div>
+
+    <p>
+      I have gained experience in building projects with various front end
+      technologies and concepts.
+    </p>
+
+    <div class="skill_list_mobile">
+      <div class="skill_icons" *ngFor="let skill of skills; let i = index">
+        <img
+          src="./../../../assets/img/skills/{{ skillImg[i] }}"
+          alt="Tech Stack Icons"
+        />
+        {{ skill }}
+      </div>
+    </div>
+    <a class="skill_btn" [href]="emailstring">
+      <button class="btn">Get in touch</button>
+    </a>
+  </div>
+  <div
+    class="skill_list_desktop"
+    data-aos="zoom-in"
+    data-aos-anchor-placement="center-bottom"
+    data-aos-duration="1000"
+  >
+  <div class="skill_icons" *ngFor="let skill of skills; let i = index">
+    <img
+      src="./../../../assets/img/skills/{{ skillImg[i] }}"
+      alt="Tech Stack Icons"
+    />
+    {{ skill }}
+  </div>
+  </div>
+</div>
