@@ -1,138 +1,317 @@
-@import "../../shared/variables/variables.scss";
-@import "../../../styles.scss";
+@import './../../shared/variables/variables.scss';
+@import './../../../styles.scss';
 
-$mobile-breakpoint: 520px;
-$mobile-breakpoint-2: 800px;
-$mobile-breakpoint-3: 1100px;
-$mobile-breakpoint-4: 1400px;
+$valid: #70E61C;
+$invalid: #E61C40;
 
-.contactSec {
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-page);
-  padding-top: 6rem;
-  .head {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    .line {
-      position: absolute;
-      right: 0;
+:host {
+  border: 2px dashed blue;
+  width: 100%;
+  max-width: 100vw;
+  @include flexbox();
+  >div {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    background-color: rgba(20, 29, 47, 0.95);
+    @include flexbox();
+    display: none;
+    >span {
+     /*  background-color: $bgColor;
+      border: 2px solid $secondColor; */
+      border-radius: 16px;
+      padding: 40px 64px;
+      font-size: 24px;
     }
   }
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+.show {
+  display: flex !important;
+  animation: fadeInOut 4s ease infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+  }
+  25% {
+      opacity: 1;
+  }
+  75% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+section {
+  border: 2px dashed red;
+  scroll-margin-top: 120px;
+  background-image: url(./../../../assets/img/contact/shadow.png);
+  background-repeat: no-repeat;
+  background-position: bottom -300px left;
+ /*  @include contentWidth(); */
+  @include flexbox($fd: column);
+  >div:first-of-type {
+    border: 2px dashed yellow;
+    @include flexbox($jc: flex-start);
     width: 100%;
-    margin-top: 30px;
-    gap: 30px;
-    position: relative;
-    &.ng-submitted {
-      &.ng-invalid {
-        .overlayAchor .ipt {
-          input,
-          textarea {
-            border: 1px solid red;
+    >div {
+      height: 4px;
+      width: 50px;
+      margin-right: 50px;
+     /*  background-color: $firstColor; */
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+    >h1 {
+      font-size: 90px;
+      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+    }
+  }
+  >div:last-of-type {
+    border: 2px dashed green;
+    width: 100%;
+    margin-top: 64px;
+    margin-bottom: 100px;
+    @include flexbox($ai: unset);
+    /* padding: 0 $paddingLR; */
+    >div:first-of-type {
+      border: 2px dashed orange;
+      width: 50%;
+      >div {
+        max-width: 480px;
+        margin-right: 32px;
+        >h4 {
+          font-size: 32px;
+        }
+        >p {
+          line-height: 1.25;
+          margin-top: 32px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+    >div:last-of-type {
+      border: 2px dashed purple;
+      width: 50%;
+      @include flexbox($fd: column, $g: 40px);
+      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+      >div {
+        width: 100%;
+        @include flexbox($jc: flex-end);
+        button {
+          width: 40px;
+          height: 40px;
+          background-image: url(./../../../assets/img/contact/arrow_up.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          border: none;
+          &:hover {
+            background-image: url(./../../../assets/img/contact/arrow_up_hover.png);
+            cursor: pointer;
           }
         }
       }
     }
-    .overlayAchor {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  }
+}
+
+form {
+  @include flexbox($fd: column);
+  width: 100%;
+  >div:first-of-type {
+    @include flexbox($fd: column, $g: 32px);
+    width: 100%;
+    >div {
       width: 100%;
-      gap: 30px;
-      position: relative;
-      .ipt {
-        position: relative;
+      @include flexbox($fd: column, $ai: flex-start, $g: 6px);
+      >input, >textarea {
         width: 100%;
-        input,
-        textarea {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          width: 100%;
-          box-sizing: border-box;
-          color: var(--white);
-          padding: 15px 25px;
-          background: var(--darkblue);
-          border: 1px solid var(--blue);
-          border-radius: 10px;
-          font-family: var(--font);
-          font-size: var(--font-size);
-          color: var(--white);
-          &::placeholder {
-            font-family: var(--font);
-            font-size: var(--font-size);
-            color: var(--white);
-          }
-          &:-webkit-autofill,
-          :-webkit-autofill:hover,
-          :-webkit-autofill:focus,
-          :-webkit-autofill:active {
-            transition: background-color 5000s ease-in-out 0s;
-            -webkit-text-fill-color: #fff !important;
-            border: 1px solid var(--lightblue);
-          }
-          &.ng-touched,
-          &.ng-dirty {
-            &.ng-valid {
-              border: 1px solid var(--lightblue);
-            }
-          }
+       /*  background-color: $bgColor;
+        border: 1px solid $firstColor;
+        outline-color: $secondColor; */
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 16px;
+        resize: vertical; 
+        &::placeholder {
+          color: white;
         }
-        .error {
-          position: absolute;
-          bottom: -20px;
-          color: red;
-          font-size: 12px;
-          margin: 0;
+        &:hover {
+          cursor: pointer;
+         /*  border: 1px solid $secondColor; */
+        }
+        /* &:focus-visible {
+          outline: 1px solid $secondColor;
+          border: 1px solid $secondColor;
+        } */
+        &::-webkit-resizer {
+         background-image: url(./../../../assets/img/contact/resizer.png);
+         background-repeat: no-repeat;
         }
       }
-      .overlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
+      >textarea {
+        min-height: 200px;
+      }
+      >span {
+        font-size: 14px;
+        color: $invalid;
+      }
+    }
+  }
+  >div:last-of-type{
+    @include flexbox($fd: column, $ai: unset);
+    width: 100%;
+    font-size: 14px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    >div {
+      @include flexbox($g: 8px, $ai: unset);
+      input {
+        appearance: none; 
+        -webkit-appearance: none;
+        -moz-appearance: none; 
+        width: 24px;
+        height: 24px; 
+        background-image: url(./../../../assets/img/contact/checkbox.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        &:hover {
+          background-image: url(./../../../assets/img/contact/checkbox_hover.png);
+        }
+        &:checked {
+          background-image: url(./../../../assets/img/contact/checkbox_checked.png);
+        }
+        &:checked:hover {
+          background-image: url(./../../../assets/img/contact/checkbox_checked_hover.png);
+        }
+      }
+      >span  {
         width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        background-color: #141d2fe0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        a {
+          text-decoration: none;
+          /* color: $firstColor; */
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    >span {
+      color: $invalid;
+    }
+  }
+  /* >button {
+    @include button();
+  } */
+}
+
+.invalid {
+  border: 1px solid $invalid !important;
+  outline-color: $invalid !important;
+  background-image: url(./../../../assets/img/contact/invalid.png);
+  background-position: right 20px top 10px;
+  background-repeat: no-repeat;
+  &:focus-visible {
+    outline: 1px solid $invalid !important;
+    border: 1px solid $invalid !important;
+  }
+}
+
+.valid {
+  border: 1px solid $valid !important;
+  outline-color: $valid !important;
+  background-image: url(./../../../assets/img/contact/valid.png);
+  background-position: right 20px top 10px;
+  background-repeat: no-repeat;
+  &:focus-visible {
+    outline: 1px solid $valid !important;
+    border: 1px solid $valid !important;
+  }
+}
+
+.disabled {
+  background-color: grey !important;
+}
+
+@media(max-width: 1440px) {
+  section {
+    >div:first-of-type {
+      >h1 {
+        font-size: clamp(50px, 6.5vw, 90px);
       }
     }
   }
 }
 
-@media (max-width: $mobile-breakpoint) {
-  .contactSec {
-    .head {
-      .line {
-        display: none !important;
-
+@media(max-width: 1000px) {
+  section {
+    background-position: bottom -400px left -50px;
+    >div:first-of-type {
+      >div {
+        width: 32px;
+        margin-right: 18px;
       }
     }
+    /* >div:last-of-type {
+      padding: 0 $paddingLR1000;
+    } */
+  }
+}
 
-    form {
-      align-self: center;
-      max-width: 520px;
+@media(max-width: 720px) {
+  :host {
+    >div {
+      >span {
+        padding: 20px 32px;
+        font-size: 16px;
+      }
+    }
+  }
+  section {
+    >div:last-of-type {
+      @include flexbox($fd: column, $g: 48px);
+      >div:first-of-type {
+        width: 100%;
+        padding-right: unset;
+      }
+      >div:last-of-type {
+        width: 100%;
+      }
     }
   }
 }
 
-@media (min-width: $mobile-breakpoint-3) {
-  .contactSec {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    form {
-      margin-top: 200px !important;
+@media(max-width: 500px) {
+  section {
+    background-position: bottom -500px left -100px;
+    >div:first-of-type {
+      >div {
+        width: 16px;
+        margin-right: 4px;
+      }
+      >h1 {
+        font-size: clamp(40px, 10vw, 60px);
+      }
     }
+    /* >div:last-of-type {
+      padding: 0 $paddingLR500;
+    } */
   }
+
+  /* form {
+    >button {
+      @include button($mobile: true);
+    }
+  } */
 }

@@ -3,13 +3,13 @@ $mobile-breakpoint-2: 800px;
 $mobile-breakpoint-3: 1100px;
 $mobile-breakpoint-4: 1400px;
 .privacySec {
-  min-height: calc(100vh - 314px);
-  padding: var(--padding-page);
-  padding-top: 70px;
-  position: relative;
-  z-index: 5;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  padding: var(--padding-page);
+  padding-top: 70px;
+  padding-bottom: 70px;
+  z-index: 5;
   .subheadline {
     font-size: var(--subheadline-size2);
   }

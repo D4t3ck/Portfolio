@@ -32,10 +32,12 @@ $mobile-breakpoint-4: 1400px;
 
     .bg_spot {
       position: absolute;
+      right: 10px;
       bottom: 0px;
       width: 100%;
       max-width: 500px;
       z-index: -1;
+
     }
     .profile_pic {
       position: relative;
@@ -43,14 +45,6 @@ $mobile-breakpoint-4: 1400px;
         object-fit: cover;
         width: 300px;
       }
-      /* .picOverlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        object-fit: contain;
-        width: 300px;
-        z-index: 7;
-      } */
     }
   }
   .content {
@@ -58,7 +52,7 @@ $mobile-breakpoint-4: 1400px;
     padding: var(--padding-page);
     word-wrap: break-word;
     text-wrap: balance;
-    z-index: 7;
+    z-index: 5;
 
     .intro_txt {
       margin-bottom: 1rem;

@@ -7,7 +7,7 @@
 
   .footer_container {
     @include flexbox($jc: space-between, $g: 1.5rem);
-    padding: 4rem 10rem 2rem 10rem;
+    padding: 0rem 10rem 2rem 10rem;
 
     .logo_container {
       @include flexbox($fd: column);
@@ -73,7 +73,7 @@
       }
 
       img {
-        width: 2.5rem;
+        width: 2rem;
         background: transparent;
       }
     }
@@ -97,5 +97,11 @@
 @media only screen and (max-width: 1129px) {
   .footer {
     margin-bottom: 2rem;
+  }
+
+  .footer_links {
+    > a {
+      border: 2px solid var(--turquoise) !important;
+    }
   }
 }
