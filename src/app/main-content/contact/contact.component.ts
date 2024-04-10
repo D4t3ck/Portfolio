@@ -20,7 +20,7 @@ export class ContactComponent {
     message: '',
   };
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://daniel-sinteck/sendMail.php',
@@ -47,7 +47,8 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
+      console.log("test ist ok");
+      
       ngForm.resetForm();
     }
   }
