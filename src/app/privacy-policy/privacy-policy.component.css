@@ -1,0 +1,22 @@
+.privacySec {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--padding-page);
+  padding-top: 70px;
+  padding-bottom: 70px;
+  z-index: 5;
+}
+.privacySec .subheadline {
+  font-size: var(--subheadline-size2);
+}
+.privacySec a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+@media (min-width: 520px) {
+  .imprintSec {
+    display: block !important;
+  }
+}/*# sourceMappingURL=privacy-policy.component.css.map */

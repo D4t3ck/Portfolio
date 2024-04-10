@@ -1,33 +1,8 @@
-@import './../../shared/variables/variables.scss';
-@import './../../../styles.scss';
+@import "./../../shared/variables/variables.scss";
+@import "./../../../styles.scss";
 
-$valid: #70E61C;
-$invalid: #E61C40;
-
-:host {
-  width: 100%;
-  max-width: 100vw;
-  @include flexbox();
-  >div {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 8;
-    background-color: rgba(20, 29, 47, 0.95);
-    @include flexbox();
-    display: none;
-    >span {
-     /*  background-color: $bgColor;
-      border: 2px solid $secondColor; */
-      border-radius: 16px;
-      padding: 40px 64px;
-      font-size: 24px;
-    }
-  }
-}
+$valid: #70e61c;
+$invalid: #e61c40;
 
 .show {
   display: flex !important;
@@ -36,71 +11,68 @@ $invalid: #E61C40;
 
 @keyframes fadeInOut {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   25% {
-      opacity: 1;
+    opacity: 1;
   }
   75% {
-      opacity: 1;
+    opacity: 1;
   }
   100% {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
 section {
+  @include flexbox($fd: column);
   scroll-margin-top: 120px;
   margin-bottom: 120px;
   background-image: url(./../../../assets/img/contact/shadow.png);
   background-repeat: no-repeat;
   background-position: bottom -300px left;
- /*  @include contentWidth(); */
-  @include flexbox($fd: column);
-  >div:first-of-type {
+  > div:first-of-type {
     @include flexbox($jc: flex-start);
-    width: 100%;
-    >div {
+    > div {
       height: 4px;
       width: 50px;
       margin-right: 50px;
-     /*  background-color: $firstColor; */
+      background-color: var(--green);
       border-top-right-radius: 2px;
       border-bottom-right-radius: 2px;
     }
-    >h1 {
+    > h1 {
       font-size: 90px;
-      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+      transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
   }
-  >div:last-of-type {
+  > div:last-of-type {
+    @include flexbox($ai: unset);
     width: 100%;
     margin-top: 64px;
-    margin-bottom: 100px;
-    @include flexbox($ai: unset);
-    /* padding: 0 $paddingLR; */
-    >div:first-of-type {
+    padding: 0 120px;
+    > div:first-of-type {
       width: 50%;
-      >div {
+      > div {
         max-width: 480px;
         margin-right: 32px;
-        >h4 {
+        > h4 {
           font-size: 32px;
         }
-        >p {
-          line-height: 1.25;
+        > p {
           margin-top: 32px;
           margin-bottom: 24px;
+          line-height: 1.25;
         }
       }
     }
-    >div:last-of-type {
-      width: 50%;
+    > div:last-of-type {
       @include flexbox($fd: column, $g: 40px);
-      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
-      >div {
-        width: 100%;
+      width: 50%;
+      transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      > div {
         @include flexbox($jc: flex-end);
+        width: 100%;
         button {
           width: 40px;
           height: 40px;
@@ -122,60 +94,62 @@ section {
 form {
   @include flexbox($fd: column);
   width: 100%;
-  >div:first-of-type {
+  > div:first-of-type {
     @include flexbox($fd: column, $g: 32px);
     width: 100%;
-    >div {
+    > div {
       width: 100%;
       @include flexbox($fd: column, $ai: flex-start, $g: 6px);
-      >input, >textarea {
+      > input,
+      > textarea {
         width: 100%;
-       /*  background-color: $bgColor;
-        border: 1px solid $firstColor;
-        outline-color: $secondColor; */
-        border-radius: 8px;
         padding: 10px 20px;
+        background-color: var(--background);
+        border: 1px solid var(--turquoise);
+        outline-color: var(--lightBlue);
+        color: var(--fontColor);
+        border-radius: 8px;
         font-size: 16px;
-        resize: vertical; 
+        resize: vertical;
         &::placeholder {
-          color: white;
+          color: var(--fontColor);
         }
         &:hover {
           cursor: pointer;
-         /*  border: 1px solid $secondColor; */
+          border: 1px solid var(--lightBlue);
         }
-        /* &:focus-visible {
-          outline: 1px solid $secondColor;
-          border: 1px solid $secondColor;
-        } */
+        &:focus-visible {
+          outline: 1px solid var(--turquoise);
+          border: 1px solid var(--turquoise);
+        }
         &::-webkit-resizer {
-         background-image: url(./../../../assets/img/contact/resizer.png);
-         background-repeat: no-repeat;
+          background-image: url(./../../../assets/img/contact/resizer.png);
+          background-repeat: no-repeat;
         }
       }
-      >textarea {
+      > textarea {
         min-height: 200px;
       }
-      >span {
+      > span {
         font-size: 14px;
         color: $invalid;
       }
     }
   }
-  >div:last-of-type{
+  > div:last-of-type {
     @include flexbox($fd: column, $ai: unset);
     width: 100%;
-    font-size: 14px;
     margin-top: 16px;
     margin-bottom: 32px;
-    >div {
+    font-size: 14px;
+    > div {
       @include flexbox($g: 8px, $ai: unset);
       input {
-        appearance: none; 
+        appearance: none;
         -webkit-appearance: none;
-        -moz-appearance: none; 
+        -moz-appearance: none;
         width: 24px;
-        height: 24px; 
+        height: 24px;
         background-image: url(./../../../assets/img/contact/checkbox.png);
         background-size: contain;
         background-repeat: no-repeat;
@@ -190,11 +164,11 @@ form {
           background-image: url(./../../../assets/img/contact/checkbox_checked_hover.png);
         }
       }
-      >span  {
+      > span {
         width: 100%;
         a {
           text-decoration: none;
-          /* color: $firstColor; */
+          color: var(--green);
           &:hover {
             cursor: pointer;
             text-decoration: underline;
@@ -202,13 +176,10 @@ form {
         }
       }
     }
-    >span {
+    > span {
       color: $invalid;
     }
   }
-  /* >button {
-    @include button();
-  } */
 }
 
 .invalid {
@@ -239,74 +210,68 @@ form {
   background-color: grey !important;
 }
 
-@media(max-width: 1440px) {
+@media (max-width: 1440px) {
   section {
-    >div:first-of-type {
-      >h1 {
+    > div:first-of-type {
+      > h1 {
         font-size: clamp(50px, 6.5vw, 90px);
       }
     }
   }
 }
 
-@media(max-width: 1000px) {
+@media (max-width: 1000px) {
   section {
     background-position: bottom -400px left -50px;
-    >div:first-of-type {
-      >div {
+    > div:first-of-type {
+      > div {
         width: 32px;
         margin-right: 18px;
       }
     }
-    /* >div:last-of-type {
-      padding: 0 $paddingLR1000;
-    } */
+    > div:last-of-type {
+      padding: 0 50px;
+    }
   }
 }
 
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   :host {
-    >div {
-      >span {
+    > div {
+      > span {
         padding: 20px 32px;
         font-size: 16px;
       }
     }
   }
   section {
-    >div:last-of-type {
+    > div:last-of-type {
       @include flexbox($fd: column, $g: 48px);
-      >div:first-of-type {
+      > div:first-of-type {
         width: 100%;
         padding-right: unset;
       }
-      >div:last-of-type {
+      > div:last-of-type {
         width: 100%;
       }
     }
   }
 }
 
-@media(max-width: 500px) {
+@media (max-width: 500px) {
   section {
     background-position: bottom -500px left -100px;
-    >div:first-of-type {
-      >div {
+    > div:first-of-type {
+      > div {
         width: 16px;
         margin-right: 4px;
       }
-      >h1 {
+      > h1 {
         font-size: clamp(40px, 10vw, 60px);
       }
     }
-    /* >div:last-of-type {
-      padding: 0 $paddingLR500;
-    } */
-  }
-
-  /* form {
-    >button {
-      @include button($mobile: true);
+    > div:last-of-type {
+      padding: 0 20px;
     }
-  } */
+  }
 }

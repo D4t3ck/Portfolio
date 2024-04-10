@@ -15,8 +15,8 @@ export class MyWorkComponent {
       technologies: 'JavaScript | HTML | CSS',
       description:
         'Task manager inspired by the Kanban System. Create and organize task using drag and drop functions, assign users and categories. This project was developed by group work.',
-      link: '#',
-      github: '#',
+      link: 'https://daniel-sinteck.de/daniel-sinteck.de/Join/',
+      github: 'https://github.com/D4t3ck/Join',
       img: 'join.png',
     },
     {
@@ -24,17 +24,17 @@ export class MyWorkComponent {
       technologies: 'JavaScript | Rest-Api | HTML | CSS',
       description:
         'Based on the PokéAPI a simple libary that provides and catalogues pokémon information',
-      link: '#',
-      github: '#',
+      link: 'https://daniel-sinteck.de/daniel-sinteck.de/Pokedex/',
+      github: 'https://github.com/D4t3ck/Pokedex',
       img: 'pokedex.png',
     },
     {
       name: 'El Pollo Loco',
-      technologies: 'JavaScript | HTML | SCSS',
+      technologies: 'JavaScript | OOP | HTML | SCSS',
       description:
         'A simple Jump-and-Run game based on an object-oriented approach. Play Pepe Peligroso and defeat the dangerous Chicken swarm! ',
-      link: '#',
-      github: '#',
+      link: 'https://daniel-sinteck.de/daniel-sinteck.de/Pollo%20Loco/',
+      github: 'https://github.com/D4t3ck/Pollo-Loco',
       img: 'pollo_loco.png',
     },
   ];

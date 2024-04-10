@@ -1,8 +1,5 @@
-<div class="portfolio_container" id="portfolio">
-  <img
-    src="./../../../assets/img/shadows/blue3.png"
-    class="spot_blue"
-  />
+<section class="portfolio_container" id="portfolio">
+  <img src="./../../../assets/img/shadows/blue3.png" class="spot_blue" />
   <img src="./../../../assets/img/shadows/green1.png" class="spot_green" />
   <div class="head">
     <img src="./../../../assets/img/skills/greenSmallLeft.png" class="line" />
@@ -10,22 +7,13 @@
   </div>
   <p>This page is a sample of my work - please feel free to try them out.</p>
   <div class="project" *ngFor="let project of projects; let i = index">
-    <img
-      src="./../../../assets/img/portfolio/{{project.img}}"
-      data-aos="fade-up"
-      data-aos-anchor-placement="bottom-bottom"
-      data-aos-duration="1000"
-    />
-    <div
-      data-aos="fade-down"
-      data-aos-anchor-placement="bottom-bottom"
-      data-aos-duration="1000"
-    >
+    <img src="./../../../assets/img/portfolio/{{ project.img }}" />
+    <div>
       <div class="project_name">{{ project.name }}</div>
       <div class="project_tec">{{ project.technologies }}</div>
-      <div class="projectDescription">{{ project.description }}</div>
+      <div class="project_desc">{{ project.description }}</div>
       <div class="project_links">
-        <button class="btnEmpty" (click)="openNewWindow(project.link)">
+        <button class="btn" (click)="openNewWindow(project.link)">
           Live test
         </button>
         <button class="btnEmpty" (click)="openNewWindow(project.github)">
@@ -34,4 +22,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

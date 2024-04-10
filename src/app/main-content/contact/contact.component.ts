@@ -23,7 +23,7 @@ export class ContactComponent {
   mailTest = false;
 
   post = {
-    endPoint: 'https://daniel-sinteck/sendMail.php',
+    endPoint: 'https://daniel-sinteck.de/daniel-sinteck.de/php/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -47,7 +47,7 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      console.log("test ist ok");
+      // console.log("test ist ok", this.contactData);
       
       ngForm.resetForm();
     }

@@ -142,7 +142,6 @@
   font-weight: 900;
   src: url("./assets/fonts/poppins-v20-latin-900italic.woff2") format("woff2");
 }
-
 :root {
   --green: #70e61c;
   --purple: #9747ff;
@@ -154,7 +153,7 @@
   --transparencyBlue: #414856;
   --fontColor: #f5f5f5;
   --headline-size: 4rem;
-  --subheadline-size: 2.5rem;
+  --subheadline-size: 32px;
   --subheadline-size2: 24px;
   --font-size: 16px;
   --padding-page: 0px 25px;
@@ -181,7 +180,6 @@
 html,
 body {
   scroll-behavior: smooth;
-  user-select: none;
 }
 
 body {
@@ -196,6 +194,7 @@ h2 {
 }
 
 .btn {
+  width: -moz-max-content;
   width: max-content;
   background: var(--turquoise);
   border: unset;
@@ -207,14 +206,22 @@ h2 {
   color: var(--fontColor);
   cursor: pointer;
   transition: 225ms ease-in-out;
-  &:hover {
-    transform: scale(1.2);
-    transition: 225ms ease-in-out;
-    background-color: var(--turquoise);
-  }
+  /* From https://css.glass */
+  background: rgba(33, 163, 190, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(33, 163, 190, 0.3);
+}
+.btn:hover {
+  transform: scale(1.2);
+  transition: 225ms ease-in-out;
+  background-color: var(--turquoise);
 }
 
 .btnEmpty {
+  width: -moz-max-content;
   width: max-content;
   background: unset;
   border: 1px solid var(--turquoise);
@@ -225,9 +232,124 @@ h2 {
   color: var(--fontColor);
   cursor: pointer;
   transition: 225ms ease-in-out;
-  &:hover {
-    transform: scale(1.2);
-    transition: 225ms ease-in-out;
-    background-color: var(--turquoise);
+}
+.btnEmpty:hover {
+  transform: scale(1.2);
+  transition: 225ms ease-in-out;
+  background-color: var(--turquoise);
+}
+
+.portfolio_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 6rem;
+  overflow-x: clip;
+}
+.portfolio_container .spot_blue {
+  position: absolute;
+  z-index: -1;
+  right: -400px;
+  top: -200px;
+}
+.portfolio_container .spot_green {
+  position: absolute;
+  z-index: -1;
+  left: -650px;
+  top: 500px;
+}
+.portfolio_container .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: var(--padding-page);
+}
+.portfolio_container .head .line {
+  position: absolute;
+  left: 0;
+}
+.portfolio_container p {
+  padding: var(--padding-page);
+}
+.portfolio_container .project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-page);
+  gap: 20px;
+}
+.portfolio_container .project img {
+  width: 80%;
+  max-width: 550px;
+}
+.portfolio_container .project div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+.portfolio_container .project div .project_name {
+  color: var(--blue);
+  font-family: var(--font-black);
+  font-size: var(--subheadline-size);
+}
+.portfolio_container .project div .project_tec {
+  color: var(--lightblue);
+  font-size: var(--subheadline-size2);
+}
+.portfolio_container .project div .project_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (min-width: 800px) {
+  .spot_blue {
+    right: -350px !important;
+    top: -150px !important;
+  }
+  .spot_green {
+    left: -600px !important;
+    top: 500px !important;
   }
 }
+@media (min-width: 1100px) {
+  .project {
+    flex-direction: row !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    gap: 50px !important;
+  }
+  .project div {
+    text-align: start !important;
+  }
+  .project div .project_links {
+    justify-content: flex-start !important;
+  }
+  .project:nth-child(even) {
+    flex-direction: row-reverse !important;
+  }
+  .project:nth-child(even) div {
+    text-align: end !important;
+  }
+  .project:nth-child(even) div .project_links {
+    justify-content: flex-end !important;
+  }
+  .spot_blue {
+    right: -290px !important;
+    top: -100px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .spot_blue {
+    right: -220px !important;
+    top: -100px !important;
+  }
+  .spot_green {
+    left: -500px !important;
+    top: 500px !important;
+  }
+}/*# sourceMappingURL=my-work.component.css.map */

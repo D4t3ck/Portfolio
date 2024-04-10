@@ -1,0 +1,23 @@
+.imprintSec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: var(--padding-page);
+  padding-top: 70px;
+  padding-bottom: 70px;
+  z-index: 5;
+}
+.imprintSec .subheadline {
+  font-size: var(--subheadline-size2);
+}
+.imprintSec a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+@media (min-width: 520px) {
+  .imprintSec {
+    display: block !important;
+  }
+}/*# sourceMappingURL=legal-notice.component.css.map */

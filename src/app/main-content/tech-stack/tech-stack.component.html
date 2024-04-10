@@ -1,10 +1,5 @@
 <div class="skill_container" id="skills">
-  <div
-    class="skill_content"
-    data-aos="fade-left"
-    data-aos-anchor-placement="center-bottom"
-    data-aos-duration="1000"
-  >
+  <div class="skill_content">
     <div class="skills">
       <h2>Skills</h2>
       <img src="./../../../assets/img/skills/lightblueRight.png" class="line" />
@@ -28,18 +23,13 @@
       <button class="btn">Get in touch</button>
     </a>
   </div>
-  <div
-    class="skill_list_desktop"
-    data-aos="zoom-in"
-    data-aos-anchor-placement="center-bottom"
-    data-aos-duration="1000"
-  >
-  <div class="skill_icons" *ngFor="let skill of skills; let i = index">
-    <img
-      src="./../../../assets/img/skills/{{ skillImg[i] }}"
-      alt="Tech Stack Icons"
-    />
-    {{ skill }}
-  </div>
+  <div class="skill_list_desktop">
+    <div class="skill_icons" *ngFor="let skill of skills; let i = index">
+      <img
+        src="./../../../assets/img/skills/{{ skillImg[i] }}"
+        alt="Tech Stack Icons"
+      />
+      {{ skill }}
+    </div>
   </div>
 </div>

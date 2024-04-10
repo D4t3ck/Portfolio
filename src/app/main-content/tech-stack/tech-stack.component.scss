@@ -1,16 +1,8 @@
 @import "../../shared/variables/variables.scss";
 @import "../../../styles.scss";
 
-$mobile-breakpoint: 520px;
-$mobile-breakpoint-2: 800px;
-$mobile-breakpoint-3: 1100px;
-$mobile-breakpoint-4: 1400px;
-
 .skill_container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  @include flexbox($fd: column, $g: 20px);
   z-index: 7;
   overflow: hidden;
   padding-top: 5rem;
@@ -20,10 +12,7 @@ $mobile-breakpoint-4: 1400px;
     flex-direction: column;
 
     .skills {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
+      @include flexbox($fd: row, $jc: flex-start);
       padding: var(--padding-page);
 
       .line {
@@ -37,19 +26,14 @@ $mobile-breakpoint-4: 1400px;
       z-index: 5;
     }
     .skill_list_mobile {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
+      @include flexbox($fd: row, $g: 20px);
       flex-wrap: wrap;
       word-wrap: break-word;
       text-wrap: balance;
       padding: var(--padding-page);
-      gap: 20px;
       z-index: 5;
       .skill_icons {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        @include flexbox($fd: column, $g: 20px);
         img {
           height: 50px;
           object-fit: contain;
@@ -66,12 +50,10 @@ $mobile-breakpoint-4: 1400px;
     }
   }
   .skill_list_desktop {
+    @include flexbox($fd: row, $g: 50px);
     display: none;
-    flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
     margin-left: 10rem;
-    gap: 50px;
     z-index: 5;
     .skill_icons {
       display: flex;
@@ -88,7 +70,7 @@ $mobile-breakpoint-4: 1400px;
   }
 }
 
-@media (min-width: $mobile-breakpoint-3) {
+@media (min-width: 1100px) {
   .skill_container {
     flex-direction: row-reverse;
     justify-content: space-between !important;
@@ -121,7 +103,7 @@ $mobile-breakpoint-4: 1400px;
   }
 }
 
-@media (min-width: $mobile-breakpoint-4) {
+@media (min-width: 1400px) {
   .skill_list_desktop {
     padding-top: 90px !important;
     padding-bottom: 90px !important;
@@ -134,6 +116,6 @@ $mobile-breakpoint-4: 1400px;
 
 @media (max-width: 420px) {
   .line {
-    right: -90px !important;
+    right: 0px !important;
   }
 }
