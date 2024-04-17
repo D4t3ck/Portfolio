@@ -5,31 +5,35 @@
   @include flexbox($fd: column);
   position: relative;
   padding-top: 6rem;
-  overflow-x: clip;
+  overflow-x: clip; 
+
   .spot_blue {
     position: absolute;
     top: -200px;
     right: -400px;
     z-index: -1;
   }
+
   .spot_green {
     position: absolute;
     top: 500px;
     left: -650px;
     z-index: -1;
   }
+
   .head {
     @include flexbox();
-    align-items: center;
     padding: var(--padding-page);
+
     .line {
-      position: absolute;
-      left: 0;
+      margin-right: 2rem; 
     }
   }
+
   p {
     padding: var(--padding-page);
   }
+
   .project {
     @include flexbox($fd: column, $g: 20px);
     padding: var(--padding-page);
@@ -39,7 +43,7 @@
       max-width: 550px;
     }
 
-    div {
+    .projects_container {
       @include flexbox($fd: column, $g: 20px);
 
       .project_name {
@@ -55,6 +59,7 @@
       .project_desc {
         text-align: center;
       }
+
       .project_links {
         @include flexbox($fd: row, $g: 20px);
       }
@@ -66,6 +71,7 @@
       right: -350px !important;
       top: -150px !important;
     }
+
     .spot_green {
       left: -600px !important;
       top: 500px !important;
@@ -79,7 +85,7 @@
       padding-bottom: 30px !important;
       gap: 50px !important;
 
-      div {
+      .projects_container {
         text-align: center !important;
 
         .project_links {
@@ -89,8 +95,10 @@
     }
     .project:nth-child(even) {
       flex-direction: row-reverse !important;
-      div {
+
+      .projects_container {
         text-align: end !important;
+        
         .project_links {
           justify-content: flex-end !important;
         }
@@ -107,6 +115,7 @@
       right: -220px !important;
       top: -100px !important;
     }
+
     .spot_green {
       left: -500px !important;
       top: 500px !important;

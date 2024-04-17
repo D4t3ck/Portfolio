@@ -5,13 +5,13 @@
     <img src="./../../../assets/img/skills/greenSmallLeft.png" class="line" />
     <h2>Portfolio</h2>
   </div>
-  <p>This page is a sample of my work - please feel free to try them out.</p>
+  <p>{{ "portfolio_text" | translate }}</p>
   <div class="project" *ngFor="let project of projects; let i = index">
     <img src="./../../../assets/img/portfolio/{{ project.img }}" />
-    <div>
+    <div class="projects_container">
       <div class="project_name">{{ project.name }}</div>
       <div class="project_tec">{{ project.technologies }}</div>
-      <div class="project_desc">{{ project.description }}</div>
+      <div class="project_desc">{{ project.description | translate }}</div>
       <div class="project_links">
         <button class="btn" (click)="openNewWindow(project.link)">
           Live test

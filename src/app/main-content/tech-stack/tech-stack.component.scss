@@ -12,56 +12,65 @@
     flex-direction: column;
 
     .skills {
-      @include flexbox($fd: row, $jc: flex-start);
+      @include flexbox($fd: row, $jc: flex-start, $g: 1rem);
+      margin-right: auto;
       padding: var(--padding-page);
-
-      .line {
-        position: absolute;
-        right: 0;
-      }
     }
+
     p {
       margin-bottom: 2rem;
       padding: var(--padding-page);
       z-index: 5;
     }
+
     .skill_list_mobile {
       @include flexbox($fd: row, $g: 20px);
       flex-wrap: wrap;
       word-wrap: break-word;
       text-wrap: balance;
+      margin-block: 2rem;
       padding: var(--padding-page);
       z-index: 5;
+
       .skill_icons {
-        @include flexbox($fd: column, $g: 20px);
+        @include flexbox($fd: column, $ai: center, $g: 1rem);
+        text-align: center;
+        width: 90px;
+
         img {
-          height: 50px;
+          height: 100%;
           object-fit: contain;
+
           &:hover {
             transform: scale(1.2);
           }
         }
       }
     }
+
     .skill_btn {
       align-self: center;
       margin: 20px 0px;
       z-index: 5;
     }
   }
+
   .skill_list_desktop {
-    @include flexbox($fd: row, $g: 50px);
+    @include flexbox();
     display: none;
     flex-wrap: wrap;
     margin-left: 10rem;
     z-index: 5;
+
     .skill_icons {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      @include flexbox($fd: column, $ai: center, $g: 1rem);
+      text-align: center;
+      width: 130px;
+
       img {
-        height: 50px;
+        height: 100%;
         object-fit: contain;
+
         &:hover {
           transform: scale(1.2);
         }
@@ -77,24 +86,30 @@
     align-items: center;
     min-height: 50vh;
     gap: 50px;
+
     .skill_content {
       padding: var(--padding-page);
       padding-left: unset !important;
       width: 30%;
       min-width: 460px;
+
       .skills {
         padding: unset;
       }
+
       p {
         padding: unset;
       }
+
       .skill_btn {
         align-self: flex-start;
       }
     }
+
     .skill_list_mobile {
       display: none !important;
     }
+
     .skill_list_desktop {
       display: flex !important;
       padding-right: unset !important;

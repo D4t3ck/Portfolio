@@ -1,11 +1,6 @@
 @import "../../../../styles.scss";
 @import "../../../shared/variables/variables.scss";
 
-$mobile-breakpoint: 520px;
-$mobile-breakpoint-2: 800px;
-$mobile-breakpoint-3: 1100px;
-$mobile-breakpoint-4: 1400px;
-
 header {
   @include flexbox($jc: space-between);
   position: fixed;
@@ -15,7 +10,6 @@ header {
   height: 5rem;
   padding: 0 4rem;
   z-index: 10;
-  /* From https://css.glass */
   background: rgba(19, 37, 72, 0.26);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.7px);
@@ -86,8 +80,8 @@ header {
   }
 
   .links {
-    @include flexbox($g: .5rem);
-    
+    @include flexbox($g: 0.5rem);
+
     font-size: 1.2rem;
 
     a {
@@ -100,6 +94,21 @@ header {
         cursor: pointer;
       }
     }
+  }
+}
+
+.language {
+  @include flexbox($fd: column, $g: 0.1rem);
+  color: whitesmoke;
+
+  > :first-child:hover {
+    cursor: pointer;
+    color: var(--green);
+  }
+
+  > :nth-child(2):hover {
+    cursor: pointer;
+    color: var(--green);
   }
 }
 

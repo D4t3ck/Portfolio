@@ -1,13 +1,12 @@
-<div class="skill_container" id="skills">
+<section class="skill_container" id="skills">
   <div class="skill_content">
     <div class="skills">
-      <h2>Skills</h2>
-      <img src="./../../../assets/img/skills/lightblueRight.png" class="line" />
+      <h2>{{ 'skills' | translate}}</h2>
+      <img class="line" src="./../../../assets/img/skills/lightblueRight.png" />
     </div>
 
     <p>
-      I have gained experience in building projects with various front end
-      technologies and concepts.
+      {{ 'skills_text' | translate}}
     </p>
 
     <div class="skill_list_mobile">
@@ -20,16 +19,17 @@
       </div>
     </div>
     <a class="skill_btn" [href]="emailstring">
-      <button class="btn">Get in touch</button>
+      <button class="btn">{{ 'skills_text_button' | translate}}</button>
     </a>
   </div>
+
   <div class="skill_list_desktop">
     <div class="skill_icons" *ngFor="let skill of skills; let i = index">
       <img
         src="./../../../assets/img/skills/{{ skillImg[i] }}"
         alt="Tech Stack Icons"
       />
-      {{ skill }}
+      <p>{{ skill }}</p>
     </div>
   </div>
-</div>
+</section>

@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../shared/services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tech-stack',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './tech-stack.component.html',
   styleUrl: './tech-stack.component.scss',
 })
 export class TechStackComponent {
+  translate = inject(TranslationService);
   skills = [
     'Angular',
     'TypeScript',
@@ -33,5 +36,5 @@ export class TechStackComponent {
     'rest-api.png',
     'material-design.png',
   ];
-  emailstring = 'mailto:daniel.sinteck@web.de';
+  emailstring = '#contact';
 }
