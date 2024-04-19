@@ -1,22 +1,27 @@
 <section class="portfolio_container" id="portfolio">
   <img src="./../../../assets/img/shadows/blue3.png" class="spot_blue" />
   <img src="./../../../assets/img/shadows/green1.png" class="spot_green" />
-  <div class="head">
-    <img src="./../../../assets/img/skills/greenSmallLeft.png" class="line" />
+  <div class="head" data-aos="fade-up">
     <h2>Portfolio</h2>
+    <p data-aos="fade-up">{{ "portfolio_text" | translate }}</p>
   </div>
-  <p>{{ "portfolio_text" | translate }}</p>
+
   <div class="project" *ngFor="let project of projects; let i = index">
-    <img src="./../../../assets/img/portfolio/{{ project.img }}" />
-    <div class="projects_container">
-      <div class="project_name">{{ project.name }}</div>
-      <div class="project_tec">{{ project.technologies }}</div>
-      <div class="project_desc">{{ project.description | translate }}</div>
-      <div class="project_links">
-        <button class="btn" (click)="openNewWindow(project.link)">
+    <img
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="1000"
+      src="./../../../assets/img/portfolio/{{ project.img }}"
+    />
+    <div class="projects_container" >
+      <div class="project_name" data-aos="fade-up">{{ project.name }}</div>
+      <div class="project_tec" data-aos="fade-up">{{ project.technologies }}</div>
+      <div class="project_desc" data-aos="fade-up">{{ project.description | translate }}</div>
+      <div class="project_links" >
+        <button class="btn" (click)="openNewWindow(project.link)" data-aos="zoom-in-right">
           Live test
         </button>
-        <button class="btnEmpty" (click)="openNewWindow(project.github)">
+        <button class="btnEmpty" (click)="openNewWindow(project.github)" data-aos="zoom-in-left">
           Github
         </button>
       </div>

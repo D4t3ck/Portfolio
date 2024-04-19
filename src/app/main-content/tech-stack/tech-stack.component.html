@@ -1,5 +1,5 @@
 <section class="skill_container" id="skills">
-  <div class="skill_content">
+  <div class="skill_content" data-aos="fade-left">
     <div class="skills">
       <h2>{{ 'skills' | translate}}</h2>
       <img class="line" src="./../../../assets/img/skills/lightblueRight.png" />
@@ -9,7 +9,7 @@
       {{ 'skills_text' | translate}}
     </p>
 
-    <div class="skill_list_mobile">
+    <div class="skill_list_mobile" data-aos="fade-right">
       <div class="skill_icons" *ngFor="let skill of skills; let i = index">
         <img
           src="./../../../assets/img/skills/{{ skillImg[i] }}"
@@ -23,7 +23,7 @@
     </a>
   </div>
 
-  <div class="skill_list_desktop">
+  <div class="skill_list_desktop" data-aos="fade-right">
     <div class="skill_icons" *ngFor="let skill of skills; let i = index">
       <img
         src="./../../../assets/img/skills/{{ skillImg[i] }}"

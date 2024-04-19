@@ -1,9 +1,9 @@
 <section id="contact">
   <div>
-    <h1>{{ "contact" | translate }}</h1>
+    <h2 data-aos="fade-right">{{ "contact" | translate }}</h2>
   </div>
   <div>
-    <div>
+    <div data-aos="fade-right">
       <div>
         <h4>{{ "contact_text1" | translate }}</h4>
         <p>
@@ -16,7 +16,11 @@
       </div>
     </div>
     <div>
-      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <form
+        (ngSubmit)="onSubmit(contactForm)"
+        #contactForm="ngForm"
+        data-aos="fade-left"
+      >
         <div>
           <div>
             <input
@@ -108,11 +112,12 @@
               message.invalid ||
               checkbox.invalid
           }"
+          data-aos="fade-up"
         >
           {{ "message_button" | translate }}
         </button>
       </form>
-      <div>
+      <div data-aos="fade-up">
         <a href="#top"><button></button></a>
       </div>
     </div>

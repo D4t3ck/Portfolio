@@ -2,15 +2,14 @@
 @import "../../../styles.scss";
 
 .aboutMeSec {
-  position: relative;
   display: flex;
   flex-direction: column;
+  position: relative;
   scroll-margin-top: 120px;
 
   .profile {
+    @include flexbox;
     position: relative;
-    display: flex;
-    justify-content: center;
     padding: 0 2rem;
     z-index: 5;
 
@@ -43,6 +42,7 @@
   }
   .content {
     position: relative;
+    margin-top: 2rem;
     padding: 0 80px;
     z-index: 5;
 
@@ -51,9 +51,7 @@
     }
 
     .about_me {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      @include flexbox($fd: row);
 
       h2 {
         font-size: clamp(2.4rem, 10vw, 5.6rem);
