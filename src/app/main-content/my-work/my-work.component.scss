@@ -72,7 +72,14 @@
       }
 
       .project_links {
-        @include flexbox($fd: row, $g: 20px);
+        @include flexbox($fd: row, $g: 2rem);
+
+        .btn, .btnEmpty {
+          &:hover {
+            transform: scale(1.2);
+            transition: none;
+          }
+        }
       }
     }
   }

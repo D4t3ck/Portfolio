@@ -12,15 +12,36 @@
     flex-direction: column;
 
     .skills {
-      @include flexbox($fd: row, $jc: flex-start, $g: 1rem);
-      margin-right: auto;
+      @include flexbox($fd: column, $jc: center, $g: 1rem);
       padding: var(--padding-page);
-    }
+      text-wrap: wrap;
 
-    p {
-      margin-bottom: 2rem;
-      padding: var(--padding-page);
-      z-index: 5;
+      h2 {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: -40px;
+          top: 50%;
+          height: 0.2rem;
+          width: 2rem;
+          background-color: var(--turquoise);
+        }
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: var(--padding-page);
+        z-index: 5;
+      }
+
+      .skill_btn {
+        align-self: center;
+        margin: 20px 0px;
+        z-index: 5;
+      }
     }
 
     .skill_list_mobile {
@@ -47,12 +68,6 @@
         }
       }
     }
-
-    .skill_btn {
-      align-self: center;
-      margin: 20px 0px;
-      z-index: 5;
-    }
   }
 
   .skill_list_desktop {
@@ -63,7 +78,7 @@
     z-index: 5;
 
     .skill_icons {
-      @include flexbox($fd: column, $ai: center, $g: 1rem);
+      @include flexbox($fd: column, $ai: center, $g: .5rem);
       text-align: center;
       width: 130px;
 
@@ -82,7 +97,7 @@
 @media (min-width: 1100px) {
   .skill_container {
     flex-direction: row-reverse;
-    justify-content: space-between !important;
+    justify-content: space-around !important;
     align-items: center;
     min-height: 50vh;
     gap: 50px;
@@ -92,14 +107,6 @@
       padding-left: unset !important;
       width: 30%;
       min-width: 460px;
-
-      .skills {
-        padding: unset;
-      }
-
-      p {
-        padding: unset;
-      }
 
       .skill_btn {
         align-self: flex-start;

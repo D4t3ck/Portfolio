@@ -42,10 +42,12 @@ section {
     margin-top: 4rem;
     padding: 0 7.5rem;
     > div:first-of-type {
+      text-align: center;
+      text-wrap: wrap;
       width: 50%;
       > div {
         max-width: 480px;
-        margin-right: 2rem;
+
         > h4 {
           font-size: 2rem;
         }
@@ -86,6 +88,8 @@ section {
 form {
   @include flexbox($fd: column);
   width: 100%;
+  padding: var(--padding-page);
+
   > div:first-of-type {
     @include flexbox($fd: column, $g: 32px);
     width: 100%;

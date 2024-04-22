@@ -1,13 +1,21 @@
 <section class="skill_container" id="skills">
   <div class="skill_content" data-aos="fade-left">
     <div class="skills">
-      <h2>{{ 'skills' | translate}}</h2>
-      <img class="line" src="./../../../assets/img/skills/lightblueRight.png" />
-    </div>
+      <h2>{{ "skills" | translate }}</h2>
+      <p>
+        {{ "skills_text" | translate }}
+      </p>
 
-    <p>
-      {{ 'skills_text' | translate}}
-    </p>
+      <a
+        class="skill_btn"
+        [href]="emailstring"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      >
+        <button class="btn">{{ "skills_text_button" | translate }}</button>
+      </a>
+    </div>
 
     <div class="skill_list_mobile" data-aos="fade-right">
       <div class="skill_icons" *ngFor="let skill of skills; let i = index">
@@ -18,9 +26,6 @@
         {{ skill }}
       </div>
     </div>
-    <a class="skill_btn" [href]="emailstring">
-      <button class="btn">{{ 'skills_text_button' | translate}}</button>
-    </a>
   </div>
 
   <div class="skill_list_desktop" data-aos="fade-right">

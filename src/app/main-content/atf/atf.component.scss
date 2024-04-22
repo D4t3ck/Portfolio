@@ -4,7 +4,6 @@
 .atf {
   @include flexbox($fd: column);
   height: 100vh;
-  width: 100vw;
   max-width: 100%;
   padding-top: 10rem;
   gap: 5rem;

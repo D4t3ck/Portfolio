@@ -117,7 +117,7 @@ header {
 
 .language {
   @include flexbox($fd: column, $g: 0.1rem);
-  color: whitesmoke;
+  color: var(--fontColor);
 
   > :first-child:hover {
     cursor: pointer;

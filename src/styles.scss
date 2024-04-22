@@ -155,8 +155,8 @@
   --backgroundLight: #243455;
   --transparencyBlue: #414856;
   --fontColor: #f5f5f5;
-  --headline-size: clamp(1.5rem, 10vw, 5.6rem);
-  --subheadline-size: 2.5rem;
+  --headline-size: clamp(1.2rem, 10vw, 4.0rem);
+  --subheadline-size: clamp(1rem, 10vw, 3.0rem);
   --subheadline-size2: 1.5rem;
   --font-size: 1rem;
   --padding-page: 0px 25px;
@@ -216,14 +216,15 @@ h2 {
   &:hover {
     transform: scale(1.2);
     transition: 225ms ease-in-out;
-    background-color: var(--turquoise);
+    background-color: var(--background);
+    border: 1px solid var(--turquoise);
   }
 }
 
 .btnEmpty {
   width: max-content;
   background: unset;
-  border: 1px solid var(--turquoise);
+  border: 1px dashed var(--turquoise);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 15px 30px;

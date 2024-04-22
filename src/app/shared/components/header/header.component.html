@@ -1,6 +1,4 @@
-<header data-aos="fade-down"
-data-aos-easing="linear"
-data-aos-duration="1500">
+<header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
   <a class="logo" href="#top">
     <img src="./../../../../assets/img/logo.png" />
   </a>
@@ -12,15 +10,14 @@ data-aos-duration="1500">
   </label>
 
   <div class="links" [class.isOpen]="isMenuOpen">
-    <a href="#aboutMe" (click)="closeMenu()">{{ 'about_me' | translate }}</a>
-    <a href="#skills" (click)="closeMenu()">{{ 'skills' | translate}}</a>
+    <a href="#aboutMe" (click)="closeMenu()">{{ "about_me" | translate }}</a>
+    <a href="#skills" (click)="closeMenu()">{{ "skills" | translate }}</a>
     <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
-    <a href="#contact" (click)="closeMenu()">{{ 'contact' | translate}}</a>
+    <a href="#contact" (click)="closeMenu()">{{ "contact" | translate }}</a>
 
     <div class="language">
       <p (click)="translate.switchLanguage('en')">EN</p>
       <p (click)="translate.switchLanguage('de')">DE</p>
     </div>
-    
   </div>
 </header>
