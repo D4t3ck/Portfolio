@@ -188,13 +188,14 @@ body {
 }
 
 body {
-  display: flex;
-  justify-content: center;
   font-family: "Poppins", sans-serif;
   background-color: var(--background);
   color: var(--fontColor);
   text-wrap: balance;
   overflow-y: hidden;
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 h2 {
