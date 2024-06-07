@@ -18,7 +18,7 @@ export class MyWorkComponent {
       technologies: 'JavaScript | HTML | CSS',
       description:
         'join_desc',
-      link: 'https://daniel-sinteck.de/daniel-sinteck.de/Join/',
+      link: 'https://join.daniel-sinteck.de/',
       github: 'https://github.com/D4t3ck/Join',
       img: 'join.png',
     },
@@ -27,7 +27,7 @@ export class MyWorkComponent {
       technologies: 'JavaScript | Rest-Api | HTML | CSS',
       description:
         'pokedex_desc',
-      link: 'https://daniel-sinteck.de/daniel-sinteck.de/Pokedex/',
+      link: 'https://pokedex.daniel-sinteck.de/',
       github: 'https://github.com/D4t3ck/Pokedex',
       img: 'pokedex.png',
     },
@@ -36,7 +36,7 @@ export class MyWorkComponent {
       technologies: 'JavaScript | OOP | HTML | SCSS',
       description:
         'pollo_desc',
-      link: 'https://daniel-sinteck.de/daniel-sinteck.de/Pollo%20Loco/',
+      link: 'https://polloloco.daniel-sinteck.de/',
       github: 'https://github.com/D4t3ck/Pollo-Loco',
       img: 'pollo_loco.png',
     },

@@ -6,7 +6,6 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import aos from 'aos';
-/* import 'aos/dist/aos.css'; */
 
 @Component({
   selector: 'app-root',
