@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -8,18 +8,48 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  
-  translate = inject(TranslationService);
+export class HeaderComponent implements OnInit, OnDestroy {
+  lastScrollY = 0;
+  header: HTMLElement | null = null;
+  navbar: HTMLElement | null = null;
   isMenuOpen = false;
+  translate = inject(TranslationService);
+
+  private scrollHandler = this.onScroll.bind(this);
+
+  ngOnInit() {
+    this.header = document.getElementById('header');
+    this.navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', this.scrollHandler);
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('scroll', this.scrollHandler);
+  }
+
+  onScroll(): void {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > this.lastScrollY) {
+      if (this.header && this.navbar) {
+        this.header.classList.add('hidden');
+        this.navbar.classList.add('visible');
+      }
+    } else {
+      if (this.header && this.navbar) {
+        this.header.classList.remove('hidden');
+        this.navbar.classList.remove('visible');
+      }
+    }
+    this.lastScrollY = currentScrollY;
+  }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  closeMenu() {
+  closeMenu(): void {
     this.toggleMenu();
     const burger = document.getElementById('burger') as HTMLInputElement | null;
     if (burger != null) {

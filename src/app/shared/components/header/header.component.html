@@ -1,4 +1,4 @@
-<header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+<header id="header" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
   <a class="logo" href="#top">
     <img src="./../../../../assets/img/logo.png" />
   </a>
@@ -9,7 +9,7 @@
     <span></span>
   </label>
 
-  <div class="links" [class.isOpen]="isMenuOpen">
+  <nav id="navbar" class="navbar" [class.isOpen]="isMenuOpen">
     <a href="#aboutMe" (click)="closeMenu()">{{ "about_me" | translate }}</a>
     <a href="#skills" (click)="closeMenu()">{{ "skills" | translate }}</a>
     <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
@@ -19,5 +19,5 @@
       <p (click)="translate.switchLanguage('en')">EN</p>
       <p (click)="translate.switchLanguage('de')">DE</p>
     </div>
-  </div>
+  </nav>
 </header>

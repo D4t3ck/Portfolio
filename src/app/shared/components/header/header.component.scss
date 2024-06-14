@@ -1,18 +1,28 @@
 @import "../../../../styles.scss";
 @import "../../../shared/variables/variables.scss";
 
+.hidden {
+  transform: translateY(-100%) !important;
+  transition: transform 0.5s ease-in !important;
+  z-index: -1 !important;
+}
+
+.visible {
+  visibility: hidden;
+}
+
 header {
   @include flexbox($jc: space-between);
   position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
   left: 0;
   max-width: 1920px;
+  height: 5rem;
   margin-right: auto;
   margin-left: auto;
-  height: 5rem;
   padding: 0 4rem;
-  z-index: 10;
   background: rgba(19, 37, 72, 0.26);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.7px);
@@ -82,7 +92,7 @@ header {
     left: 5px;
   }
 
-  .links {
+  .navbar {
     @include flexbox($g: 0.5rem);
     font-size: 1.2rem;
 
@@ -137,7 +147,7 @@ header {
   .burger {
     display: block !important;
   }
-  .links {
+  .navbar {
     display: none !important;
     &.isOpen {
       position: absolute;
@@ -159,13 +169,13 @@ header {
 }
 
 @media (min-width: 800px) {
-  .links {
+  .navbar {
     gap: 30px !important;
   }
 }
 
 @media (min-width: 1100px) {
-  .links {
+  .navbar {
     gap: 50px !important;
   }
 }
