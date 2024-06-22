@@ -1,18 +1,26 @@
 <footer class="footer">
   <section class="footer_container">
     <div class="logo_container">
-      <a class="logo" href="#top">
+      <a class="logo" routerLink="/" (click)="goTopPage()">
         <img src="../../../../assets/img/logo.png" alt="Logo" />
       </a>
 
       <div class="legal_notices">
         <p>
-          <a href="legal-notice" class="imprint">{{ "impress" | translate }}</a>
+          <a 
+          class="imprint"
+          routerLink="/legal-notice" 
+          (click)="goTopPage()">
+          {{ "imprint" | translate }}</a
+          >
         </p>
         <p>
-          <a href="privacy-policy" class="privacy_policy">{{
-            "privacy_policy" | translate
-          }}</a>
+          <a
+            class="privacy_policy"
+            routerLink="/privacy-policy"
+            (click)="goTopPage()"
+            >{{ "privacy_policy" | translate }}</a
+          >
         </p>
       </div>
     </div>

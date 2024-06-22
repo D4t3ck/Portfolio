@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
@@ -18,6 +19,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   translate = inject(TranslationService);
 
   private scrollHandler = this.onScroll.bind(this);
+
+  goTopPage() {
+    window.scroll(0, 0);
+  }
 
   ngOnInit() {
     this.header = document.getElementById('header');
