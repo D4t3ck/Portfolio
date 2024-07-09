@@ -16,8 +16,8 @@
     <a href="#contact" (click)="closeMenu()">{{ "contact" | translate }}</a>
 
     <div class="language">
-      <p (click)="translate.switchLanguage('en')">EN</p>
-      <p (click)="translate.switchLanguage('de')">DE</p>
+      <p (click)="translate.switchLanguage('en'); closeMenu()">EN</p>
+      <p (click)="translate.switchLanguage('de'); closeMenu()">DE</p>
     </div>
   </nav>
 </header>
