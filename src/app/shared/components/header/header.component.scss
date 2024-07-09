@@ -132,12 +132,7 @@ header {
   @include flexbox($fd: column, $g: 0.1rem);
   color: var(--fontColor);
 
-  > :first-child:hover {
-    cursor: pointer;
-    color: var(--green);
-  }
-
-  > :nth-child(2):hover {
+  > :first-child:hover, :nth-child(2):hover {
     cursor: pointer;
     color: var(--green);
   }
