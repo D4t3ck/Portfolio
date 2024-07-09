@@ -1,16 +1,11 @@
 @import "../../styles.scss";
 
 $mobile-breakpoint: 520px;
-$mobile-breakpoint-2: 800px;
-$mobile-breakpoint-3: 1100px;
-$mobile-breakpoint-4: 1400px;
 
 .privacySec {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-align: center;
-  text-wrap: wrap;
   height: 100%;
   margin-top: 3rem;
   padding: var(--padding-page);

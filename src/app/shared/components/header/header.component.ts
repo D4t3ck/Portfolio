@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     window.removeEventListener('scroll', this.scrollHandler);
   }
 
-  onScroll(): void {
+  onScroll() {
     const currentScrollY = window.scrollY;
     if (currentScrollY > this.lastScrollY) {
       if (this.header && this.navbar) {
@@ -50,11 +50,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.lastScrollY = currentScrollY;
   }
 
-  toggleMenu(): void {
+  toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  closeMenu(): void {
+  closeMenu() {
     this.toggleMenu();
     const burger = document.getElementById('burger') as HTMLInputElement | null;
     if (burger != null) {

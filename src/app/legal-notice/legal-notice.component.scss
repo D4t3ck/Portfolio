@@ -1,16 +1,17 @@
 @import "../../styles.scss";
 
 $mobile-breakpoint: 520px;
-$mobile-breakpoint-2: 800px;
-$mobile-breakpoint-3: 1100px;
-$mobile-breakpoint-4: 1400px;
+
+strong {
+  color: var(--turquoise);
+}
 
 .imprintSec {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  text-align: center; 
+  /* text-align: center;  */
   height: 100%;
   margin-top: 2rem;
   padding: var(--padding-page);
